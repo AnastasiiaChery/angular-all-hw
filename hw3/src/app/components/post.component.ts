@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { IPost } from '../services/post.interface';
+import { PostService } from '../services/post.service';
+
+
 
 @Component({
   selector: 'app-post',
@@ -8,15 +12,16 @@ import { UserService } from '../services/user.service';
 })
 export class UserComponent implements OnInit {
 
-    post: any[];
+    post: IPost[];
 
-    constructor(private userService: UserService) {
-  
-      this.userService.allPosts().subscribe(posts => {
-          console.log(posts)
-         
-        this.post = posts;
-      })
+    constructor( private postService: PostService, 
+      private activatedRoute: ActivatedRoute) {
+  console.log(this.activatedRoute.params.subscribe((param:Params) =>{
+    console.log(param.id);
+    this.postService.getPostByUserId(param.id).subscribe( value => this.post = value)
+    console.log(this.post)
+  }))
+     
     }
     
 

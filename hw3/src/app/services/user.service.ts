@@ -12,7 +12,5 @@ import { Observable } from 'rxjs';
     allUsers(): Observable<any[]>{
       return this.http.get<any[]>('https://jsonplaceholder.typicode.com/users')
     }
-    allPosts(): Observable<any[]>{
-        return this.http.get<any[]>('http://jsonplaceholder.typicode.com/posts')
-      }
+    
   }
