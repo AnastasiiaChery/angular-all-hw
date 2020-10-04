@@ -1,20 +1,17 @@
-  
 import {Component, OnInit} from '@angular/core';
-import { UserService } from '../services/user.service';
-
+import {UserService} from '../../services/user.service';
 
 @Component({
-  selector: 'app-user',
+  selector: 'app-all-users',
   templateUrl: './user.component.html',
   styleUrls: []
 })
-export class AllUsersComponent implements OnInit {
-
+export class UserComponent implements OnInit {
   xxx: any[];
 
   constructor(private userService: UserService) {
 
-    this.userService.allUsers().subscribe(users => {
+    this.userService.getAllUsers().subscribe(users => {
       this.xxx = users;
     })
   }
