@@ -2,21 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { PostComponent } from './components/post/post.component';
 import { AllUsersComponent } from './components/all-users/all-user.components';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './components/user/user.component';
 
-const routes: Routes =[{
-  path: 'all-user', component: AllUsersComponent}
+
+const routes: Routes =[
+  {path: 'all-users', component: AllUsersComponent}
 
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent,
-    AllUsersComponent
+    UserComponent,
+    AllUsersComponent,
+    
   ],
   imports: [
     BrowserModule,

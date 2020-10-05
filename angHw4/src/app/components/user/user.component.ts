@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
+  selector: 'app-user',
+  templateUrl: './user.component.html',
   styleUrls: []
 })
-export class PostComponent implements OnInit {
+export class UserComponent implements OnInit {
 
 @Input()
-post:any
+user:any
 constructor(){
     
 }
