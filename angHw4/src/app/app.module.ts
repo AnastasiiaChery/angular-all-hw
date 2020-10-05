@@ -5,10 +5,11 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './components/post/post.component';
 import { AllUsersComponent } from './components/all-users/all-user.components';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes =[{
   path: 'all-user', component: AllUsersComponent}
-  
+
 ];
 
 @NgModule({
@@ -19,7 +20,9 @@ const routes: Routes =[{
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

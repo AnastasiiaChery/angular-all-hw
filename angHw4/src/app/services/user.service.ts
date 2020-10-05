@@ -15,7 +15,7 @@ export class UserService {
     return this.http.get<any[]>('http://jsonplaceholder.typicode.com/users');
   }
 
-  getPOstById(id: number): Observable<any> {
+  getPostById(id: number): Observable<any> {
     return this.http.get<any[]>(`http://jsonplaceholder.typicode.com/posts/${id}`);
   }
 }
