@@ -12,7 +12,7 @@ import { UserPostComponent } from './components/user-post/user-post.component';
 
 const routes: Routes =[
   {path: 'all-users', component: AllUsersComponent, children: [
-    {path: 'details', component: UserPostComponent}
+    {path: 'details/:id', component: UserPostComponent}
 
   ]}
   

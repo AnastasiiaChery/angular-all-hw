@@ -14,20 +14,19 @@ export class UserPostComponent implements OnInit {
    
     post;
    
-   constructor(private router: Router ){
+   constructor(private router: Router,
+    private activateRoute: ActivatedRoute ){
+      this.activateRoute.params.subscribe(()=>{
     console.log( this.router.getCurrentNavigation().extras.state)
     this.post= this.router.getCurrentNavigation().extras.state.xxx
-      
+     }
+  )
 
-   }
-
-
-    ngOnInit(): void {
-       
-    }
-
+   
  
- }
+  }
+  ngOnInit(): void {
+   
+  }
 
-
-
+}

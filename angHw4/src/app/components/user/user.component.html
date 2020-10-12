@@ -2,6 +2,6 @@
     <div>{{user?.id}} - {{user?.name}} -{{user?.email}}</div>
     <hr>
     
-    <button [routerLink]="['details']" [state]="{xxx: user}" >details</button>
+    <button [routerLink]="['details', user.id]" [state]="{xxx: user}" >details</button>
   </div>
   
