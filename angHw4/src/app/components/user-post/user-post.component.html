@@ -1,5 +1,5 @@
-
-
-
-      {{post.id} <br> {{post.name}} <br>{{post.email}}
-      <hr>
+<div *ngFor= "let p of post">
+    {{p.id}} <br>
+    {{p.title}} <br>
+    {{p.body}}
+</div>

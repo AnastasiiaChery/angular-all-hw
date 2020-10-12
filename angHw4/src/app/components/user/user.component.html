@@ -1,7 +1,7 @@
-<div>
-    <div>{{user?.id}} - {{user?.name}} -{{user?.email}}</div>
-    <hr>
-    
-    <button [routerLink]="['details', user.id]" [state]="{xxx: user}" >details</button>
-  </div>
   
+<div>
+  <div>{{user?.id}} - {{user?.name}} -{{user?.email}}</div>
+  
+  <button (click)="showUser(user)">details</button>
+  <hr>
+</div>

@@ -1,32 +1,28 @@
-
 import {Component, OnInit} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { IPost } from 'src/app/services/post.interface';
-import { UserService } from 'src/app/services/user.service';
-
+import {ActivatedRoute, Route, Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
 
 @Component({
-  selector: 'app-user-post',
+  selector: 'app-user-details',
   templateUrl: './user-post.component.html',
   styleUrls: []
 })
 export class UserPostComponent implements OnInit {
-   
-    post;
-   
-   constructor(private router: Router,
-    private activateRoute: ActivatedRoute ){
-      this.activateRoute.params.subscribe(()=>{
-    console.log( this.router.getCurrentNavigation().extras.state)
-    this.post= this.router.getCurrentNavigation().extras.state.xxx
-     }
-  )
 
+  post;
+
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute, private userService: UserService) {
+    this.activatedRoute.params.subscribe((param) => {
+      console.log(param.id);
+      this.userService.getPostById(param.id).subscribe( value => this.post = value)
+    console.log(this.post)
+    });
    
- 
   }
+
+
   ngOnInit(): void {
-   
   }
 
 }
