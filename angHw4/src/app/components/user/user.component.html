@@ -2,6 +2,6 @@
 <div>
   <div>{{user?.id}} - {{user?.name}} -{{user?.email}}</div>
   
-  <button (click)="showUser(user)">details</button>
+  <button [routerLink]="['details']" [queryParams]="{userId:user.id}">details</button>
   <hr>
 </div>

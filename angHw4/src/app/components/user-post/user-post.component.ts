@@ -13,13 +13,14 @@ export class UserPostComponent implements OnInit {
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute, private userService: UserService) {
-    this.activatedRoute.params.subscribe((param) => {
-      console.log(param.id);
-      this.userService.getPostById(param.id).subscribe( value => this.post = value)
+      this.activatedRoute.queryParams.subscribe((param) => {
+      console.log(+Object.values(param));
+      this.userService.getPostById(+Object.values(param)).subscribe( value => this.post = value)
     console.log(this.post)
     });
-   
+  
   }
+  
 
 
   ngOnInit(): void {
