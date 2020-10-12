@@ -1,8 +1,7 @@
 <div>
-    <div>
-        {{user.id}} - {{user.name}}-{{user.email}}
-        <button [routerLink]="['details',user.id]">details</button>
-        <hr>
-
-    </div>
-</div>
+    <div>{{user?.id}} - {{user?.name}} -{{user?.email}}</div>
+    <hr>
+    
+    <button [routerLink]="['details']" [state]="{xxx: user}" >details</button>
+  </div>
+  

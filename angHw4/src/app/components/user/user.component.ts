@@ -9,8 +9,8 @@ export class UserComponent implements OnInit {
 
 @Input()
 user:any
-constructor(){
-    
+constructor() {
+  console.log(this.user);
 }
 
   ngOnInit(): void {
