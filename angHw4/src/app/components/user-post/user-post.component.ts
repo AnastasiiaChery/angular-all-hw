@@ -12,21 +12,24 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserPostComponent implements OnInit {
    
-    post;
-   
-   constructor(private router: Router,
-    private activateRoute: ActivatedRoute ){
-      this.activateRoute.params.subscribe(()=>{
-    console.log( this.router.getCurrentNavigation().extras.state)
-    this.post= this.router.getCurrentNavigation().extras.state.xxx
-     }
-  )
+  
+  post;
 
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute, private userService: UserService) {
+    this.activatedRoute.params.subscribe((param) => {
+      console.log(param.id);
+      this.userService.getPostById(param.id).subscribe( value => this.post = value)
+    console.log(this.post)
+    });
    
- 
   }
   ngOnInit(): void {
-   
+    
   }
 
-}
+
+ 
+  }
+  
+
