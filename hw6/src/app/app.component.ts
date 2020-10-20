@@ -12,7 +12,7 @@ import { UserService } from './services/user.service';
 export class AppComponent {
   user: any= {id:0};
   post: any;
-  chose: any = {id:0};
+  chose: any = [{id:0}];
   title = 'hw6';
   
 
