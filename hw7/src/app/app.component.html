@@ -1,5 +1,5 @@
-<div *ngFor="let user of users">
-     {{user |adder:'Hello dear, ':', welcome on our website. ': 'Your id:': '. Your email: '| uppercase }}
-     <hr>
-  </div>
+<div>
+     
+     <div [innerHTML]="users | adder"></div>
+   </div>
 
