@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hw8"
+    }
+  },
+  "defaultProject": "hw8",
+  "cli": {
+    "analytics": false
+  }
 }
